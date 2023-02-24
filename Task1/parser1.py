@@ -5,12 +5,12 @@ import nltk
 dir_path = "my_grammar"
 
 # Load the grammar from the file
-file_path = os.path.join(dir_path, "my_grammar.cfg")
+file_path = os.path.join(dir_path, "my_grammar2.cfg")
 with open(file_path, "r") as f:
-    grammar1 = nltk.CFG.fromstring(f.read())
+    grammar2 = nltk.CFG.fromstring(f.read())
 
     sent = ["Mary", "saw", "Bob"]
-    rd_parser = nltk.RecursiveDescentParser(grammar1)
-    for tree in rd_parser.parse(sent):
+    earley_parser = nltk.EarleyChartParser(grammar2)
+    for tree in earley_parser.parse(sent):
         print(tree)
 
