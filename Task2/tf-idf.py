@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Load the text from the file
-with open('document1.txt', 'r') as f:
+with open('corpus/document1.txt', 'r') as f:
     text = f.read()
 
 # Create a TfidfVectorizer object

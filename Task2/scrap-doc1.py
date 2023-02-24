@@ -63,5 +63,5 @@ plt.show()
 tokens_str = " ".join(tokens)
 
 # Save the processed data
-with open('document1.txt', 'w') as f:
+with open('corpus/document1.txt', 'w') as f:
     f.write(tokens_str)
