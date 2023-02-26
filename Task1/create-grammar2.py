@@ -3,18 +3,19 @@ import nltk
 
 # Define the modified grammar
 grammar2 = nltk.CFG.fromstring("""
-  S -> NP VP
-  VP -> V | V NP | V Adj | V NP Adj | V NP PP | V NP Adj PP
-  PP -> P NP
-  V -> "saw" | "ate" | "walked" | "is" | "eating" | "wanted" | "died" | "put" | "called" | V Conj
-  Conj -> "and"
-  PN -> "John" | "Mary" | "Bob" | "Oscar" | "Paris" | "Sally" | "president" | "waiter"
-  NP -> NP Conj NP | Det N | Det Adj N | PN
-  Det -> "a" | "an" | "the" | "my"
-  Adj -> "very" | "perplexed" | "lazy"
-  N -> "man" | "dog" | "cat" | "telescope" | "park" | "sandwich" | "chairs" | "tables"
-  P -> "in" | "on" | "by" | "with"
-  Adv -> "suddenly" | "quickly" | "slowly"
+S -> NP VP
+NP -> Det N | Det Adj N | PN | NP Conj NP
+VP -> V | V NP | VP Conj VP | V NP PP | Adv VP
+PP -> P NP
+Conj -> "and" | "or"
+Det -> "a" | "an" | "the" | "my" | "The" 
+Adj -> "very" | "perplexed" | "lazy"
+N -> "man" | "dog" | "cat" | "telescope" | "park" | "sandwich" | "president" | "waiter" | "chair" | "table" | "chairs" | "tables" | "death"
+V -> "saw" | "ate" | "walked" | "wanted" | "is" | "died" | "put" | "called" | "eating"
+P -> "in" | "on" | "by" | "with"
+PN -> "John" | "Mary" | "Bob" | "Oscar" | "Paris" | "Sally"
+Adv -> "suddenly" | "quickly" | "slowly" | "very"
+Copula -> "is"
 """)
 
 # Create a directory if it does not exist
