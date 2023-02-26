@@ -1,0 +1,15 @@
+(S (NP (PN Mary)) (VP (V saw) (NP (PN Bob))))
+(S (NP (PN Sally)) (VP (V ate) (NP (Det a) (N sandwich))))
+(S
+  (NP (NP (PN Sally)) (Conj and) (NP (Det the) (N president)))
+  (VP
+    (VP (V wanted))
+    (Conj and)
+    (VP (V ate) (NP (Det a) (N sandwich)))))
+(S
+  (NP (Det the) (N waiter))
+  (VP
+    (V put)
+    (NP (Det the) (N chairs))
+    (PP (P on) (NP (Det the) (N tables)))))
+(S (NP (PN Oscar)) (VP (V called) (NP (Det the) (N waiter))))

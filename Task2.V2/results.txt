@@ -1,0 +1,109 @@
+python3 tf-idf.py
+[[0.         0.         0.         ... 0.         0.         0.        ]
+ [0.00426055 0.         0.         ... 0.         0.         0.        ]
+ [0.         0.00130754 0.         ... 0.         0.         0.        ]
+ [0.         0.         0.         ... 0.         0.         0.        ]
+ [0.         0.         0.00260032 ... 0.00260032 0.00260032 0.00260032]
+ [0.         0.         0.         ... 0.         0.         0.        ]]
+Top 10 terms for document 1:
+        tesla: 0.76
+        retrieved: 0.24
+        musk: 0.20
+        teslas: 0.17
+        2021: 0.16
+        model: 0.16
+        2020: 0.14
+        elon: 0.12
+        2022: 0.10
+        car: 0.09
+Top 10 terms for document 2:
+        manchester: 0.63
+        united: 0.30
+        league: 0.29
+        cup: 0.21
+        football: 0.19
+        retrieved: 0.17
+        club: 0.17
+        clubs: 0.10
+        madrid: 0.10
+        fa: 0.09
+Top 10 terms for document 3:
+        walmart: 0.81
+        retrieved: 0.23
+        stores: 0.20
+        archived: 0.14
+        original: 0.12
+        walmarts: 0.12
+        2016: 0.09
+        us: 0.09
+        november: 0.08
+        july: 0.07
+Top 10 terms for document 4:
+        uber: 0.77
+        ubers: 0.19
+        2017: 0.17
+        2018: 0.14
+        archived: 0.13
+        original: 0.13
+        september: 0.12
+        2022: 0.12
+        hlist: 0.10
+        retrieved: 0.10
+Top 10 terms for document 5:
+        samsung: 0.83
+        retrieved: 0.17
+        archived: 0.17
+        original: 0.15
+        2012: 0.12
+        korea: 0.09
+        2011: 0.08
+        korean: 0.08
+        company: 0.08
+        august: 0.08
+Top 10 terms for document 6:
+        apple: 0.70
+        retrieved: 0.31
+        apples: 0.20
+        2017: 0.15
+        iphone: 0.12
+        jobs: 0.12
+        may: 0.11
+        mac: 0.10
+        steve: 0.09
+        original: 0.09
+Top 5 similar documents for Tesla, Inc..txt:
+        Apple Inc..txt: Score: 0.24
+        Walmart.txt:    Score: 0.19
+        Uber.txt:       Score: 0.19
+        Samsung.txt:    Score: 0.15
+        Manchester United F.C..txt:     Score: 0.13
+Top 5 similar documents for Manchester United F.C..txt:
+        Apple Inc..txt: Score: 0.17
+        Walmart.txt:    Score: 0.14
+        Tesla, Inc..txt:        Score: 0.13
+        Uber.txt:       Score: 0.11
+        Samsung.txt:    Score: 0.11
+Top 5 similar documents for Walmart.txt:
+        Apple Inc..txt: Score: 0.26
+        Uber.txt:       Score: 0.19
+        Tesla, Inc..txt:        Score: 0.19
+        Samsung.txt:    Score: 0.18
+        Manchester United F.C..txt:     Score: 0.14
+Top 5 similar documents for Uber.txt:
+        Apple Inc..txt: Score: 0.24
+        Walmart.txt:    Score: 0.19
+        Tesla, Inc..txt:        Score: 0.19
+        Samsung.txt:    Score: 0.16
+        Manchester United F.C..txt:     Score: 0.11
+Top 5 similar documents for Samsung.txt:
+        Apple Inc..txt: Score: 0.25
+        Walmart.txt:    Score: 0.18
+        Uber.txt:       Score: 0.16
+        Tesla, Inc..txt:        Score: 0.15
+        Manchester United F.C..txt:     Score: 0.11
+Top 5 similar documents for Apple Inc..txt:
+        Walmart.txt:    Score: 0.26
+        Samsung.txt:    Score: 0.25
+        Tesla, Inc..txt:        Score: 0.24
+        Uber.txt:       Score: 0.24
+        Manchester United F.C..txt:     Score: 0.17

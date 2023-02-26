@@ -1,9 +1,8 @@
 import os
-import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 """
-    This script handles the following questions:
+    This script handles the following tasks:
         Calculate the tf-idf for each document in your corpus
         For each document, show the top 10 words with the highest tf.idf values
         Find the most similar documents in your text.

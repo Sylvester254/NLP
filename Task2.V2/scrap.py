@@ -7,7 +7,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import matplotlib.pyplot as plt
 from nltk.probability import FreqDist
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 nltk.download('punkt')
 nltk.download('stopwords')

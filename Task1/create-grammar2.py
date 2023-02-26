@@ -1,6 +1,8 @@
 import os
 import nltk
-
+"""
+This script creates the .cfg file for the grammar
+"""
 # Define the modified grammar
 grammar2 = nltk.CFG.fromstring("""
 S -> NP VP
