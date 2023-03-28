@@ -25,3 +25,7 @@ the same class label been put in the same cluster?
 
 # IMDb Movies Reviews
 I'll be using the IMDb dataset available on the Stanford AI Group website for my task.
+
+**Step 1**:
+
+We use the `os` library to iterate over the text files in the train and test directories, and load the contents into dataframes. We then save the dataframes to CSV files using the to_csv method. The resulting CSV files will have two columns, "Sentiment" and "Label", where "Sentiment" contains the text of the reviews and "Label" contains either "pos" or "neg" to indicate the sentiment of each review.

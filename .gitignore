@@ -1,0 +1,5 @@
+
+**Step 2**:
+uses regular expressions to remove HTML tags, converts the text to lowercase, removes numbers and special characters, and then uses spaCy to tokenize the text and remove stop words. Finally, the tokens are joined back into a string. To make it more efficient, we load the spaCy model only once outside the preprocessing function and disable the parser and named entity recognition components, which we don't need for this task.
+
+
