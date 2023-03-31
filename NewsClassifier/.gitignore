@@ -82,3 +82,58 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Precision:", precision_score(y_test, y_pred, average='weighted', zero_division=1))
 print("Recall:", recall_score(y_test, y_pred, average='weighted', zero_division=1))
 print("F1-Score:", f1_score(y_test, y_pred, average='weighted'))
+
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+import joblib
+
+# Load the preprocessed news corpus
+df = pd.read_csv('preprocessed_news_corpus.csv')
+
+# Create a CountVectorizer object
+vectorizer = CountVectorizer()
+
+# Vectorize the text data
+X = vectorizer.fit_transform(df['Content'])
+
+# Get the labels
+y = df['Topic']
+
+# Split data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train the Random Forest classifier
+clf = RandomForestClassifier(n_estimators=100, random_state=42)
+clf.fit(X_train, y_train)
+
+# Predict the categories for the test set
+y_pred = clf.predict(X_test)
+
+# Evaluate the performance of the classifier
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Precision:", precision_score(y_test, y_pred, average='weighted'))
+print("Recall:", recall_score(y_test, y_pred, average='weighted'))
+print("F1-Score:", f1_score(y_test, y_pred, average='weighted'))
+
+# Save the vectorizer
+joblib.dump(vectorizer, 'Count_vectorizer.pkl')
+
+# Save the classifier
+joblib.dump(clf, 'RandF_classifier.pkl')
+
+
+import joblib
+
+# Load the vectorizer and the classifier
+vectorizer = joblib.load('Count_vectorizer.pkl')
+clf = joblib.load('RandF_classifier.pkl')
+
+# Use the loaded model to predict new data
+new_data = ['preparations to cope with the effects of global warming.The government said it would take the recommendations into account.', 'Premier League tightens ownership rules to stop human rights abusers running a clubLast updated on 4 hours ago4 hours ago.']
+new_data_transformed = vectorizer.transform(new_data)
+predicted_labels = clf.predict(new_data_transformed)
+for label in predicted_labels:
+    print(label)
