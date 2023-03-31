@@ -19,3 +19,66 @@
         "url":"https://www.bbc.com/news/business-65099136",
         "title":"business"
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Here i was trying to see if random forest could perform better. 
+Dictionary param_grid contains the hyperparameters to search over, and create a RandomForestClassifier with default hyperparameters.
+It then uses GridSearchCV to perform a grid search over the hyperparameters, using 5-fold cross-validation and the accuracy metric for scoring. Finally, we print the best hyperparameters and corresponding performance, and use the best model to predict the categories for the test set and evaluate its performance.
+
+
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+# Load the preprocessed news corpus
+df = pd.read_csv('preprocessed_news_corpus.csv')
+
+# Create a CountVectorizer object
+vectorizer = CountVectorizer()
+
+# Vectorize the text data
+X = vectorizer.fit_transform(df['Content'])
+
+# Get the labels
+y = df['Topic']
+
+# Split data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Define the hyperparameters to search over
+param_grid = {
+    'n_estimators': [50, 100, 150],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 4]
+}
+
+# Create the Random Forest classifier
+clf = RandomForestClassifier(random_state=42)
+
+# Perform a grid search over the hyperparameters
+grid_search = GridSearchCV(clf, param_grid, cv=3, scoring='accuracy')
+grid_search.fit(X_train, y_train)
+
+# Print the best hyperparameters and corresponding performance
+print("Best hyperparameters:", grid_search.best_params_)
+print("Best performance:", grid_search.best_score_)
+
+# Use the best model to predict the categories for the test set
+best_clf = grid_search.best_estimator_
+y_pred = best_clf.predict(X_test)
+
+# Evaluate the performance of the best model
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Precision:", precision_score(y_test, y_pred, average='weighted', zero_division=1))
+print("Recall:", recall_score(y_test, y_pred, average='weighted', zero_division=1))
+print("F1-Score:", f1_score(y_test, y_pred, average='weighted'))
