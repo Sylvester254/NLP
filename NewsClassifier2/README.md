@@ -24,3 +24,4 @@ the same class label been put in the same cluster?
 
 # News Classifier
 This involves building NLP model for news classification.
+- I have documented all the steps ive taken inside the notebook.

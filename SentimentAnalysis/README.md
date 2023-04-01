@@ -29,3 +29,7 @@ I'll be using the IMDb dataset available on the Stanford AI Group website for my
 **Step 1**:
 
 We use the `os` library to iterate over the text files in the train and test directories, and load the contents into dataframes. We then save the dataframes to CSV files using the to_csv method. The resulting CSV files will have two columns, "Sentiment" and "Label", where "Sentiment" contains the text of the reviews and "Label" contains either "pos" or "neg" to indicate the sentiment of each review.
+
+**Step 2**:
+uses regular expressions to remove HTML tags, converts the text to lowercase, removes numbers and special characters, and then uses spaCy to tokenize the text and remove stop words. Finally, the tokens are joined back into a string. To make it more efficient, we load the spaCy model only once outside the preprocessing function and disable the parser and named entity recognition components, which we don't need for this task.
+
